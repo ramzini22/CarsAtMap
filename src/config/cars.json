@@ -1,0 +1,20 @@
+[
+  {
+    "location": [12.32, 23.23],
+    "category": "A",
+    "name": "OLeg A.",
+    "phone": "+79172818977"
+  },
+  {
+    "location": [12.32, 23.23],
+    "category": "B",
+    "name": "OLeg B.",
+    "phone": "+79172818977"
+  },
+  {
+    "location": [12.32, 23.23],
+    "category": "B",
+    "name": "OLeg C.",
+    "phone": "+79172818977"
+  }
+]

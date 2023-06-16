@@ -1,0 +1,3 @@
+type ICar={
+    name:string
+}
