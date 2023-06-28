@@ -1,13 +1,12 @@
-import React, {FC, useContext, useState} from "react";
-import Router from "../../Routes";
+import React, {useState} from "react";
+import carItems from '../../config/cars.json'
 
-
+// Context for cars at all app
 export const CarCreateContext = React.createContext<any>(null)
-
 const CarContext = ({children}:{children:React.ReactNode}) => {
-    const [filter, setFilter] = useState<ICar[]>()
+    const [cars, setFilter] = useState(carItems)
     return(
-        <CarCreateContext.Provider value={{filter, setFilter}}>
+        <CarCreateContext.Provider value={{cars, setFilter, allCars:carItems}}>
             {children}
         </CarCreateContext.Provider>
     )

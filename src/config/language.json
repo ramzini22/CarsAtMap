@@ -1,0 +1,68 @@
+{
+  "rus": {
+    "lang": "rus",
+    "nav": [
+      "Карты",
+      "Фильтры",
+      "Нaстройки"
+    ],
+    "settings": {
+      "button": "Переключить текст на английский"
+    },
+    "filter": {
+      "title": "Категория транспорта",
+      "checkList": [
+        { "label": "Все", "value": "ALL" },
+        { "label": "Грузовой", "value": "C" },
+        { "label": "Пассажирский", "value": "B" },
+        { "label": "Спецтранспорт", "value": "D" }
+      ],
+      "button": "Применить",
+      "items": {
+        "name": "Название ТС",
+        "userName": "Имя водителя",
+        "category": "Категория ТС"
+      }
+    },
+    "car": {
+      "title": "Страница ТС",
+      "textButton": "Написать",
+      "textOnWhatsUP": "Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе",
+      "phoneButton": "Позвонить",
+      "phoneText": "Контактный номер водителя"
+    }
+  },
+  "eng": {
+    "lang": "eng",
+    "nav": [
+      "Maps",
+      "Filters",
+      "Settings"
+    ],
+    "settings": {
+      "button": "Change language on russian"
+    },
+    "filter": {
+      "title": "Kind of car",
+      "checkList": [
+        { "label": "All", "value": "ALL" },
+        { "label": "Cargo", "value": "C" },
+        { "label": "Passenger", "value": "B" },
+        { "label": "Special transport", "value": "D" }
+      ],
+      "button": "Apply",
+      "items": {
+        "name": "Name of vehicle",
+        "userName": "Name of driver",
+        "category": "Category of vehicle"
+      }
+    },
+    "car": {
+      "title": "Page of vehicle",
+      "textButton": "Write message",
+      "textOnWhatsUP": "Good afternoon, please tell me what order number you currently have in work",
+      "phoneButton": "Phone me",
+      "phoneText": "Driver's contact number"
+    }
+  }
+}

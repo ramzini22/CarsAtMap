@@ -1,24 +1,15 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from "react-native";
+import {SafeAreaView, StatusBar, StyleSheet, View} from "react-native";
 import cars from '../../config/cars.json'
+import {styles} from "./style";
+
+// Hoc for style our background
 const MainLayout = ({children}:any) => {
     return (
         <SafeAreaView style={styles.main}>
+            <View style={styles.header} />
             {children}
         </SafeAreaView>
     );
 };
-
 export default MainLayout;
-
-const styles: any = StyleSheet.create({
-    main: {
-        flex: 1,
-        backgroundColor: 'black',
-        width: '100%',
-        minHeight: '100%'
-    },
-    container:{
-        flex:1
-    }
-})

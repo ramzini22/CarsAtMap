@@ -1,4 +1,7 @@
+import {ICar} from "../../config/types";
+
 export type IContextCar={
-    filter:ICar[]
+    cars:ICar[]
+    allCars:ICar[]
     setFilter:(cars:ICar[])=>void
 }

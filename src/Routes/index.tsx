@@ -1,71 +1,69 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import Home from "../Screens/Home/Home";
 import Filter from "../Screens/Filter/index";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {AntDesign, EvilIcons, Feather} from '@expo/vector-icons';
+import {AntDesign, Feather} from '@expo/vector-icons';
 import Settings from "../Screens/Settings/Settings";
-
+import Maps from "../Screens/Maps/Maps";
+import {useLanguageContext} from "../Contexts/LanguageContext/hook";
+import Car from '../Screens/Car/index'
+import {ICar} from "../config/types";
 export type RootStackParams={
-    Home:undefined
+    Maps:undefined
     Params:undefined
     Settings:undefined
+    Car:ICar
 }
 
 const Index = () => {
 
-    // const Stack = createNativeStackNavigator<RootStackParams>();
     const Stack = createBottomTabNavigator<RootStackParams>();
+    const {language} =useLanguageContext()
 
     return (
             <NavigationContainer>
                 <Stack.Navigator
-                    initialRouteName='Home'
+                    initialRouteName='Maps'
                     screenOptions={{
                         tabBarInactiveTintColor:'black',
                         tabBarActiveTintColor:'red',
-
-                        headerShown:false,
-
                         tabBarInactiveBackgroundColor:'white',
-                        // tabBarActiveBackgroundColor:'black',
-
+                        headerShown:false,
                     }}
                 >
-                    <Stack.Screen
-                        name='Home'
-                        component={Home}
-                        options={{
+                    <Stack.Group
+                        screenOptions={{
                             tabBarIcon: ({ color, size }) =>
-                            <AntDesign name="search1" size={size} color={color} />,
-                            title: 'Карты',
+                                <AntDesign name="search1" size={size} color={color} />,
+                            title: language.nav[0],
                             headerStyle: {
                                 backgroundColor: '#f4511e',
                             },
                         }}
-                    />
+                    >
+                        <Stack.Screen
+                            name='Maps'
+                            component={Maps}
+                        />
+                        <Stack.Screen
+                            name='Params'
+                            component={Filter}
+                            options={{tabBarButton:() => null}}
+                        />
+                        <Stack.Screen
+                            name='Car'
+                            component={Car}
+                            options={{tabBarButton:() => null}}
+                        />
+                    </Stack.Group>
 
-                    <Stack.Screen
-                        name='Params'
-
-                        component={Filter}
-                        options={{
-                            tabBarIcon: ({ color, size }) =>
-                                <AntDesign name="filter" size={size} color={color} />,
-                            title:'Фильтры',
-                            headerStyle: {
-                                backgroundColor: '#f4511e',
-                            },
-                        }}
-                    />
                     <Stack.Screen
                         name='Settings'
-
                         component={Settings}
                         options={{
                             tabBarIcon: ({ color, size }) =>
                                 <Feather name="settings" size={size} color={color} />,
-                            title:'Настройки',
+                            title:language.nav[2],
                             headerStyle: {
                                 backgroundColor: '#f4511e',
                             },
