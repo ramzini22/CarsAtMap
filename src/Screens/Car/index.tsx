@@ -1,11 +1,9 @@
-import React, {FC, useCallback} from 'react';
-import {Button, Linking, Platform, StyleSheet, Text, View} from "react-native";
+import React, {FC} from 'react';
+import {Button, Linking, Text, View} from "react-native";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import {RootStackParams} from "../../Routes";
 import Title from "../../Components/Title";
-import MainLayout from "../Layouts/MainLayout";
 import {useLanguageContext} from "../../Contexts/LanguageContext/hook";
-import CarItem from "../Filter/Components/CarItem";
 import MapView, {Marker} from "react-native-maps";
 import {style} from "./style";
 import {useLinkWats} from "./hooks";
@@ -19,7 +17,7 @@ const Index: FC<PropsType> = ({navigation, route}) => {
     const [phoneNumber] = useLinkWats(car) // hook for using correct link on What's Up
     const [latitude,longitude] = car.location
     return (
-        <MainLayout>
+        <>
             <Title>
                 {language.car.title}
             </Title>
@@ -72,7 +70,7 @@ const Index: FC<PropsType> = ({navigation, route}) => {
                     </View>
                 </View>
             </View>
-        </MainLayout>
+        </>
     )
 };
 export default Index;

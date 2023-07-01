@@ -30,15 +30,13 @@ const Index = () => {
                         tabBarInactiveBackgroundColor:'white',
                         headerShown:false,
                     }}
+
                 >
                     <Stack.Group
                         screenOptions={{
+                            title: language.nav[0],
                             tabBarIcon: ({ color, size }) =>
                                 <AntDesign name="search1" size={size} color={color} />,
-                            title: language.nav[0],
-                            headerStyle: {
-                                backgroundColor: '#f4511e',
-                            },
                         }}
                     >
                         <Stack.Screen
@@ -61,12 +59,9 @@ const Index = () => {
                         name='Settings'
                         component={Settings}
                         options={{
+                            title: language.nav[2],
                             tabBarIcon: ({ color, size }) =>
                                 <Feather name="settings" size={size} color={color} />,
-                            title:language.nav[2],
-                            headerStyle: {
-                                backgroundColor: '#f4511e',
-                            },
                         }}
                     />
                 </Stack.Navigator>
